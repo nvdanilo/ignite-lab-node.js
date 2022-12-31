@@ -20,7 +20,7 @@ export class InMemoryNotificationsRepository
 
         async countManyByRecipientId(recipientId: string): Promise<number> {
             return this.notifications.filter(
-                notification => notification.recipientId === recipientId
+                (notification) => notification.recipientId === recipientId,
             ).length;
         }
         

@@ -14,7 +14,7 @@ export class CountRecipientNotifications {
     constructor(private notificationsRepository: NotificationsRepository) {}
 
     async execute(
-        request: CountRecipientNotificationsRequest
+        request: CountRecipientNotificationsRequest,
         ): Promise<CountRecipientNotificationsResponse> {
         const { recipientId } = request;
 
