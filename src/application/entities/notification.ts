@@ -1,4 +1,4 @@
-import { Replace } from "src/helpers/Replace";
+import { Replace } from "../../helpers/Replace";
 import { Content } from "./content";
 import { randomUUID } from "node:crypto";
 
@@ -16,7 +16,7 @@ export class Notification {
     private props: NotificationProps;
 
     constructor(props: Replace<NotificationProps, { createdAt?: Date }>,
-        id?: string
+        id?: string,
     ) {
         this._id = id ?? randomUUID();
         this.props = {

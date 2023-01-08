@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { Notification } from "@application/entities/notification";
 import { NotificationsRepository } from "@application/repositories/notifications-repository";
 import { PrismaService } from "../prisma.service";
-import { PrismaNotificationMapper } from "../mappers/prisma-notification-mapper";
+import { PrismaNotificationMapper } from "@infra/database/prisma/mappers/prisma-notification-mapper";
 
 @Injectable()
 export class PrismaNotificationsRepository implements NotificationsRepository {
@@ -12,7 +12,7 @@ export class PrismaNotificationsRepository implements NotificationsRepository {
         const notification = await this.prisma.notification.findUnique({
             where: {
                 id: notificationId,
-            }
+            },
         });
 
         if (!notification) {
